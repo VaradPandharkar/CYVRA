@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Shield, Globe, MessageSquare, QrCode, LayoutDashboard,
-  User, Chrome, Bell, Settings, Menu, X, LogOut,
+  User, Chrome, X, LogOut,
   ChevronRight, Activity, Zap
 } from "lucide-react";
 

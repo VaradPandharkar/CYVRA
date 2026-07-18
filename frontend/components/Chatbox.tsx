@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { Shield, Send, X, Minus, ChevronUp, Terminal, Zap } from "lucide-react";
+import { Shield, Send, X, Minus, Terminal, } from "lucide-react";
 
 interface Message {
   id: number;
