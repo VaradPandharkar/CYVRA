@@ -30,7 +30,7 @@
 
 **CYVRA** is a real-time cybersecurity companion designed to protect everyday users from the digital threats they encounter most: phishing links, scam messages, and malicious QR codes. Powered by an AI threat-intelligence engine, CYVRA scans, analyzes, and scores risk in seconds — giving users a clear, confident answer before they click, scan, or share.
 
-Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a clean, dark, security-focused UI with an AI backend capable of continuous threat learning.
+Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a clean, dark, security-focused UI with a Python backend and a modern Next.js frontend.
 
 <div align="center">
 
@@ -49,6 +49,7 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 - 📱 **QR Code Scanner** — Detect malicious payloads hidden inside QR codes before you scan them in the real world.
 - 🤖 **AI Threat Intelligence** — Continuously active AI model analyzing patterns across scam campaigns.
 - 📊 **Live Threat Metrics** — Transparent, real-time stats on threats analyzed, accuracy, and attacks blocked.
+- 🔐 **Secure Auth System** — Dedicated authentication service to keep user data protected.
 - 🎨 **Sleek, Minimal UI** — A distraction-free, dark-themed interface built for clarity under pressure.
 
 ---
@@ -56,26 +57,63 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 ## 🖥️ Preview
 
 <div align="center">
-<img src="https://via.placeholder.com/900x500/000000/FFFFFF?text=CYVRA+%E2%80%94+Trust+Before+You+Click" alt="CYVRA Landing Page Preview" width="85%" />
+<img src="assets/preview.png" alt="CYVRA Landing Page Preview" width="90%" />
 
-<sub>Replace this placeholder with an actual screenshot of your landing page (e.g. `assets/preview.png`)</sub>
+<sub>CYVRA landing page — dark, minimal, security-first design</sub>
 </div>
 
 ---
 
 ## 🧰 Tech Stack
 
-> _Update this section with your actual stack — placeholders below based on common choices for this type of app._
-
 <div align="center">
 
+**Frontend**
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+
+**Backend**
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+
+**Tooling**
+
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 
 </div>
+
+---
+
+## 📂 Project Structure
+
+```
+CYVRA/
+├── backend/
+│   ├── services/           # Core backend services
+│   ├── auth.py             # Authentication logic
+│   ├── database.py         # Database connection & queries
+│   ├── main.py              # App entry point
+│   ├── models.py            # Data models
+│   ├── cyvra.db              # SQLite database
+│   ├── requirements.txt      # Python dependencies
+│   ├── verify_backend.py     # Backend verification script
+│   └── verify_flask.py       # Flask verification script
+│
+└── frontend/
+    ├── app/                   # Next.js app router
+    ├── components/            # Reusable UI components
+    ├── next.config.mjs
+    ├── tailwind.config.ts
+    ├── tsconfig.json
+    └── package.json
+```
 
 ---
 
@@ -84,18 +122,31 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 ### Prerequisites
 
 ```bash
-node -v   # v18+
-npm -v
+node -v      # v18+
+python -v    # 3.10+
 ```
 
-### Installation
+### Backend Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/varadpandharkar/cyvra.git
+cd backend
 
-# Navigate into the project
-cd cyvra
+# Create & activate a virtual environment
+python -m venv venv
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # macOS / Linux
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the backend
+python main.py
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
 
 # Install dependencies
 npm install
@@ -106,11 +157,12 @@ npm run dev
 
 ### Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file inside `frontend/` and `backend/` as needed:
 
 ```env
-VITE_API_KEY=your_threat_intelligence_api_key
-VITE_API_BASE_URL=https://api.cyvra.com
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+SECRET_KEY=your_flask_secret_key
+DATABASE_URL=sqlite:///cyvra.db
 ```
 
 ---
@@ -118,6 +170,7 @@ VITE_API_BASE_URL=https://api.cyvra.com
 ## 🗺️ Roadmap
 
 - [x] Landing page & core UI
+- [x] Backend authentication system
 - [x] URL threat scanning
 - [ ] QR code malicious payload detection
 - [ ] Scam message classifier (SMS/Email)
@@ -153,8 +206,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 **Varad Pandharkar**
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/varad-pandharkar-560661370)
 
 <br />
 
