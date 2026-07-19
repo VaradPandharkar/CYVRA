@@ -26,7 +26,7 @@
 
 ---
 
-## 📖 About The Project
+## About The Project
 
 **CYVRA** is a real-time cybersecurity companion designed to protect everyday users from the digital threats they encounter most: phishing links, scam messages, and malicious QR codes. Powered by an AI threat-intelligence engine, CYVRA scans, analyzes, and scores risk in seconds — giving users a clear, confident answer before they click, scan, or share.
 
@@ -42,7 +42,7 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - 🔗 **Instant URL Scanning** — Paste any link and get a real-time trust verdict.
 - 🌐 **Threat Analysis Engine** — Deep-dive analysis of suspicious domains and websites.
@@ -54,7 +54,7 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 
 ---
 
-## 🖥️ Preview
+## Preview
 
 <div align="center">
 <img src="assets/preview.png" alt="CYVRA Landing Page Preview" width="90%" />
@@ -64,7 +64,7 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -91,7 +91,7 @@ Built end-to-end as a **solo project** by **Varad Pandharkar**, CYVRA combines a
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 CYVRA/
@@ -117,7 +117,7 @@ CYVRA/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -167,7 +167,7 @@ DATABASE_URL=sqlite:///cyvra.db
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] Landing page & core UI
 - [x] Backend authentication system
@@ -181,7 +181,7 @@ See the [open issues](#) for a full list of proposed features and known bugs.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is currently a solo-developed project, but contributions, ideas, and feedback are always welcome.
 
@@ -193,7 +193,7 @@ This is currently a solo-developed project, but contributions, ideas, and feedba
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
